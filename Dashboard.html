@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My DashBoard</title>
+    <style>
+        span{
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome <span id="username"></span></h1>
+        <button onclick="logOut()">Log Out</button>
+    </div>
+    <input type="text" id="input1">
+    <input type="text" id="input2">
+    <button onclick="post(postDataBase)">Post</button>
+    <div id="previewDiv"></div>
+</body>
+</html>
+<script>
+    let username = document.getElementById("username")
+    let userDataBase = JSON.parse(localStorage.getItem("signup-form"))||[]
+    let findUser = userDataBase.find((user) =>{
+        return user
+        
+    })
+    if (findUser) {
+        username.innerHTML = `${findUser.fullnameInput}`
+    }else{
+        username.innerHTML = ""
+    }
+    function logOut() {
+        window.location.href = "Log in.html"
+    }
+
+    let input1 = document.getElementById("input1")
+    let input2 = document.getElementById("input2")
+
+    let previewDiv = document.querySelector("#previewDiv")
+    let postDataBase = JSON.parse(localStorage.getItem("dashboard-form"))||[]
+    function post() {
+        let firstPost = input1.value.trim()
+        let secondPost = input2.value.trim()
+        // Object use key as a naming convention.objects use to build a thing that has alot of characteristics
+        if (!firstPost || !secondPost) {
+            alert("you did not input anything")
+        } 
+         let newpost = postDataBase.find((user) => user.title  === firstPost || user.secondPost === secondPost )
+        if (newpost) {
+            alert("Post already exists")
+        }
+        else{
+            let obj = {
+                title:firstPost,
+                content: secondPost,
+            }
+            postDataBase.push(obj)
+            localStorage.setItem("dashboard-form", JSON.stringify(postDataBase))
+            // console.log(userDataBase);
+            dis(postDataBase)
+            ref()
+            alert("post sucessfull")
+        
+        }
+    }
+    function ref(){
+        input1.value = ""
+        input2.value = ""
+    }
+    
+    function dis(params) {
+        previewDiv.innerHTML = ''
+            for (let i = 0; i < params.length; i++) {
+                previewDiv.innerHTML += `<div>
+                <p>Title :${params[i].title}</p>
+                <p>Post :${params[i].content}</p>
+                <button onclick = "postLiked(${i})" id = "likePost">not - liked</button>
+                </div>
+                `
+                
+            }
+        
+    }
+    dis(postDataBase)
+    function postLiked() { 
+        if (likePost.innerHTML === "liked") {
+                likePost.innerHTML = "not - liked"
+                likePost.style.color = "black"
+        }else{
+            likePost.innerHTML = "liked"
+            likePost.style.color = "red"
+        }
+    }
+         
+    
+</script>

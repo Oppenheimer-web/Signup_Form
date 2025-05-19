@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="signup.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div class="me">
+            <h2>Sign up to Create your Account</h2>
+        </div>
+        <div class="input">
+            <div class="div">
+                <p>Enter Username</p>
+                <input type="text" placeholder="Fullname" class="mine" id="fullnameInput">
+                <p></p>
+            </div>
+            <div class="div">
+                <p>Email or username</p>
+                <input type="email" placeholder="name@domain.com" class="mine" id="emailInput">
+            </div>
+            <div class="div">
+                <p>Create Password</p>
+                <input  type="password" placeholder="Create Password" class="mine" id="passwordInput1">
+                <div id="div"></div>
+            </div>
+            <div class="div">
+                <p>Confirm Password</p>
+                <input type="password" placeholder="Confirm Password" class="mine" id="passwordInput2">
+                <div id="div2"></div>
+            </div>
+            <div class="div">
+                <p><input type="checkbox"  id="passwordInput3">I agree to all terms and conditions</p>
+                <div id="div3"></div>
+            </div>
+            <div id="type">
+                <button onclick="Signup()">Create Account</button>
+            </div>
+        </div>
+        <!-- <div id="u"><hr><p>or</p><hr></div> -->
+        <div id="r"><hr></div>
+        <div class="this">
+            <p>Already have an account?</p>
+            <a href="C:\Users\SAMUEL\Desktop\Javascript\S and L form\Log in.html">Log in here.</a>
+        </div>
+
+        <table id="table">
+            <thead>
+                <th> S/N</th>                                                                                                                                                                                                                                                                                                                                                                                                                                           
+                <th> FULLNAME </th>
+                <th> EMAIL </th>
+                <th> PASSWORD </th>
+                <th> CONFIRM PASSWORD </th>
+
+            </thead>
+            <tbody id="tbody">
+
+
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
+<script>
+    let input1= document.getElementById("fullnameInput")
+    let input2 = document.getElementById("emailInput")
+    let password = document.getElementById("passwordInput1")
+    let confirmInput = document.getElementById("passwordInput2")
+    let checkInput = document.getElementById("passwordInput3")
+
+    let userDataBase = JSON.parse(localStorage.getItem("signup-form"))||[]
+    function Signup() {
+        let fullnameInput = input1.value.trim()
+        let emailInput = input2.value.trim()
+        let passwordInput = password.value.trim()
+        let confpdInput = confirmInput.value.trim()
+        // let valid = true
+        let result = document.getElementById("div")
+        let result2 = document.getElementById("div2")
+        let result3 = document.getElementById("div3")
+        let checkBoxInput = checkInput.checked 
+        // console.log(fullnameInput,valid);
+        if (!fullnameInput && !emailInput && !passwordInput && !confpdInput && !checkBoxInput) {
+            alert("All fields required")
+        }
+        if (!fullnameInput) {
+            alert("Enter Fullname")
+            return false;
+
+        }if (!emailInput.endsWith("@gmail.com")) {
+            alert("Enter valid email")
+            return false;
+
+        }
+        if (!passwordInput) {
+            alert("Enter password")
+            return false
+                
+        }
+        if(passwordInput.length < 8) {
+            result.textContent = "Input atleast 8 characters"
+            return false;
+
+        }
+        if(confpdInput !== passwordInput){
+            result2.textContent = "Input password are not the same 8 characters"
+            return false;
+        } 
+        if(userDataBase.find((user) => user.emailInput === emailInput)){
+            alert("Email already Exists")
+            return false;
+        }
+        if(!checkBoxInput){
+            alert("You did not agree with the terms and conditions")
+            console.log(checkBoxInput);
+            return false;
+        }   
+            
+        else{
+            let userObj = {
+                fullnameInput,
+                emailInput,
+                passwordInput,
+                confpdInput,
+            }
+            userDataBase.push(userObj)
+            localStorage.setItem("signup-form", JSON.stringify(userDataBase))
+            window.location.href = "Log in.html"
+            alert("Account created sucessfully")
+            // checkBoxInput.checked === valid
+            display()
+        }
+      
+    }
+    function display() {
+        table.style.display = "block"
+        tbody.innerHTML = ''
+        userDataBase.forEach((user, i) => {
+            tbody.innerHTML += `   <tr>
+                    <td> ${i + 1} </td>
+                    <td> ${user.fullnameInput}</td>
+                    <td> ${user.emailInput}</td>
+                    <td> ${user.passwordInput}</td>
+                    <td> ${user.confpdInput}</td>
+
+                </tr>`
+        });
+    }
+  
+</script>

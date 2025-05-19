@@ -1,0 +1,143 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+main{
+    background-color: rgba(0, 0, 0, 0.93);
+    height: 100vh;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+.container{
+    display: flex;
+    border-radius: 4px;
+    box-shadow: 5px 5px 5px 5px black;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: black;
+    height: 700px;
+    padding: 20px 30px;
+    width: 700px;
+}
+#now{
+    background-color: black;
+    width: 45px;
+    height: 45px;
+    border-radius: 60px;
+    cursor: pointer;
+}
+.me{
+    color: white;
+    font-family: sans-serif;
+    font-weight: 750;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    padding: 30px 0px;
+    font-size: 23px;
+}
+.start{
+    border-radius: 25px;
+    padding: 15px 40px;
+    align-items: center;
+    text-align: center;
+    display: flex;
+    gap: 27px;
+    background-color: transparent;
+    border: 1px solid rgb(46, 45, 45);
+    cursor: pointer;
+    width: 320px;
+    font-weight: 700;
+}
+
+.loe{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.start a{
+    text-decoration: none;
+    font-size: larger;
+    color: white;
+}
+#com{
+    width: 20px;
+    height: 20px;
+}
+.start:hover{
+    border: 1px solid white;
+}
+hr{
+    border: 1px solid rgb(38, 38, 38);
+    width: 460px;
+    opacity: 0.3;
+}
+#r{
+    padding: 20px 0px;
+}
+.input{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 29px;
+    color: white;
+}
+.input p{
+    font-family: sans-serif;
+    font-weight: 600;
+    align-self: start;
+}
+.mine{
+    width: 300px;
+    height: 40px;
+    border-radius: 5px;
+    border: 1px solid rgba(255, 255, 255, 0.725);  
+    background-color: transparent;
+    font-size: 15px; 
+    padding: 0 10px;
+    color: white;
+}
+.mine:hover{
+    border: 1px solid white;  
+    
+}
+#type{
+    padding: 10px 0px;
+}
+#type button{
+    width: 300px;
+    height: 40px;
+    border-radius: 25px;
+    border: none; 
+    background-color: rgb(85, 230, 85); 
+    font-size: 15px; 
+    padding: 0 10px;
+    color: black;
+    cursor: pointer;
+    font: 1em sans-serif;
+}
+#type button:hover{
+    background-color: rgb(102, 227, 102); 
+    transform: scale(1.05);
+    transition: all 0.2s ease-in;
+}
+.this{
+    color: rgb(119, 118, 118);
+    display: flex;
+    gap: 5px;
+    font: 1em sans-serif;
+    padding: 10px 0px;
+    font-size: 15px;
+}
+.this a{
+    color: white;
+    text-decoration: underline 3px;
+}
+.this:hover a{
+    color: rgb(90, 224, 90);
+    text-decoration: underline 3px rgb(90, 224, 90);
+}

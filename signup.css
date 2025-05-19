@@ -1,0 +1,187 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: rgb(18, 18, 18);
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(18, 18, 18);
+    height: 100vh;
+    padding: 10px 0px;
+    gap: 10px;
+
+}
+#now{
+    background-color: black;
+    width: 45px;
+    height: 45px;
+    border-radius: 60px;
+    cursor: pointer;
+}
+.me{
+    color: white;
+    font-family: sans-serif;
+    font-weight: 750;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 30px 0px;
+    font-size: 18px;
+}
+.me h2{
+    width: 390px;
+    text-align: center;
+    font-size: 40px;
+}
+table,
+        td,
+        th,
+        tr,
+        thead,
+        tbody {
+            border-collapse: collapse;
+            padding: 10px;
+            border: 2px solid rgb(255, 255, 255);
+        }
+        th{
+            color: rgb(255, 255, 255);
+        }
+        td{
+            color: rgb(255, 255, 255);
+            align-self: center;
+        }
+        table{
+            width: 36%;
+            height: fit-content;
+            display: none;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+.input{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    color: white;
+}
+.input p{
+    font-family: sans-serif;
+    font-weight: 600;
+    align-self: start;
+}
+.mine{
+    width: 400px;
+    height: 40px;
+    border-radius: 5px;
+    border: 1px solid rgba(255, 255, 255, 0.725);  
+    background-color: transparent;
+    font-size: 15px; 
+    padding: 0 10px;
+    color: white;
+}
+#mine:hover{
+    border: 1px solid white;  
+}
+#type button{
+    width: 300px;
+    height: 40px;
+    border-radius: 25px;
+    border: none; 
+    background-color: rgb(85, 230, 85); 
+    font-size: 15px; 
+    padding: 0 10px;
+    color: black;
+    cursor: pointer;
+    font: 1em sans-serif;
+}
+#type button:hover{
+    background-color: rgb(101, 247, 101); 
+    transform: scale(1.05);
+    transition: all 0.2s ease-in;
+}
+#type{
+    padding: 0px 0px;
+}
+.input a{
+    color: rgb(85, 230, 85);
+    align-self: flex-start;
+    padding: 20px 0;
+}
+hr{
+    border: 1px solid rgba(255, 255, 255, 0.229);
+    width: 136px;
+    height: 0;
+    opacity: 0.4;
+}
+#u{
+    padding: 30px 0px;
+    color: white;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 9px;
+}
+.start{
+    border-radius: 25px;
+    padding: 15px 40px;
+    align-items: center;
+    text-align: center;
+    display: flex;
+    gap: 27px;
+    background-color: transparent;
+    border: 1px solid rgb(46, 45, 45);
+    cursor: pointer;
+    width: 320px;
+    font-weight: 700;
+}
+
+.loe{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.start a{
+    text-decoration: none;
+    font-size: larger;
+    color: white;
+}
+#com{
+    width: 20px;
+    height: 20px;
+}
+.start:hover{
+    border: 1px solid white;
+}
+#r hr{
+    border: 1px solid rgb(38, 38, 38);
+    width: 330px;
+    opacity: 0.3;
+}
+#r{
+    padding: 40px 0px;
+}
+.this{
+    color: rgb(119, 118, 118);
+    display: flex;
+    gap: 5px;
+    font: 1em sans-serif;
+    padding: 10px 0px;
+    font-size: 17px;
+}
+.this a{
+    color: white;
+    text-decoration: underline 1px;
+}
+.crash{
+    color: rgb(119, 118, 118);
+    width: 270px;
+    font: 1em sans-serif;
+    font-size: 11px;
+    text-align: center;
+}

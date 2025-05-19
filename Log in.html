@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="login.css">
+    <title>Login Page</title>
+</head>
+<body>
+    <main>
+        <div class="container">
+            <div class="me">
+                <h2>Log in your Account</h2>
+            </div>
+            <!-- <div class="loe">
+                <button class="start">
+                    <img src="google-icon.png" alt="" id="com">
+                    <a href="#">Continue with Google</a>
+                </button>
+                <button class="start">
+                    <img src="984f500cf9de4519b02b354346eb72e0-facebook-icon-social-media-by-vexels.webp" alt="" id="com">
+                    <a href="#">Continue with Facebook</a>
+                </button>
+                <button class="start">
+                    <img src="Apple-logo-white-png.png" alt="" id="com">
+                    <a href="#">Continue with Apple</a>
+                </button>
+                <button class="start">
+                    <a href="#">Continue with phone number</a>
+                </button>
+            </div> -->
+            
+            <div class="input">
+                <div class="div">
+                    <p>Email</p>
+                    <input type="email" placeholder="Email or Username" class="mine" id="userEmail">
+                </div>
+                <div class="div">
+                    <p>Enter password</p>
+                    <input required type="email" placeholder="Enter Password" class="mine" id="passwordInputt">
+                    <div id="div"></div>
+                </div>
+                <div id="r"><hr></div>
+                <div id="type">
+                    <button onclick="Login()">Continue</button>
+                </div>
+            </div>
+            <div class="this">
+                <p>Don't have an account?</p>
+                <a href="C:\Users\SAMUEL\Desktop\Javascript\S and L form\Signup.html">Sign up here</a>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
+<script>
+    let userDataBase = JSON.parse(localStorage.getItem("signup-form"))||[]
+    function Login() {
+        let findUser = userDataBase.find((user) =>{
+            return user.emailInput === userEmail.value.trim()
+        })
+        if (!findUser) {
+            alert("Account does not Exist")
+        } else {
+            if (findUser.passwordInput !== passwordInputt.value.trim()) {
+                alert("Email or Password does not exist")
+            }else{
+                alert("You have logged in successfully")
+                window.location.href = "Dashboard.html"
+            }
+            
+        }
+    }
+    
+</script>
