@@ -109,7 +109,7 @@
             for (let i = 0; i < postDataBase.length; i++) {
                 previewDiv.innerHTML += `<div>
                 <p>Title :${postDataBase[i].title}</p>
-                <img>${postDataBase[i].img}</img>
+                <img src="${postDataBase[i].img}"></img>
                 <p>Description :${postDataBase[i].content}</p>
                 
                 <button onclick = "postLiked(${i})" id = "likePost">not - liked</button>
